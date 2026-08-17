@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Claudio Tassis — BarCode Labs · 3D World</title>
+  <meta name="description" content="Portfólio 3D de Claudio Tassis, fundador da BarCode Labs. SaaS em produção: Planeja.ai, Tatame, NutriBase, TeachersHub, Fisio360 e M/A." />
+  <meta property="og:title" content="Claudio Tassis — 3D World" />
+  <meta property="og:description" content="Scroll through a 3D world of crafted SaaS." />
+  <meta property="og:image" content="./assets/logo.png" />
+  <link rel="icon" href="./assets/logo.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/world.css" />
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <div id="loader">
+    <img src="./assets/logo.png" alt="BarCode LABS" />
+    <p>Compiling the 3D world…</p>
+    <div class="loader-bar"><span></span></div>
+  </div>
+
+  <canvas id="webgl" aria-hidden="true"></canvas>
+
+  <header class="topbar">
+    <a class="brand" href="#hero">
+      <img src="./assets/logo.png" alt="BarCode LABS" />
+    </a>
+    <nav>
+      <a href="https://barcodelabs.com.br/" target="_blank" rel="noopener">Studio</a>
+      <a href="https://github.com/claudiotassis">GitHub</a>
+      <a href="https://www.linkedin.com/in/claudio-tassis/" target="_blank" rel="noopener">LinkedIn</a>
+    </nav>
+  </header>
+
+  <main id="scroll-root">
+    <section class="panel" data-station="0" id="hero">
+      <div class="card card-hero">
+        <p class="kicker">BarCode Labs · Vitória, ES</p>
+        <h1>Claudio Tassis</h1>
+        <p class="lede">Fundador &amp; full stack. Transformo ideias em SaaS em produção — produto, frontend, backend, mobile e infra.</p>
+        <p class="scroll-cue">Role para entrar no mundo 3D<span></span></p>
+      </div>
+    </section>
+
+    <section class="panel panel-right" data-station="1">
+      <article class="card">
+        <p class="kicker">01 · SaaS educacional · em produção</p>
+        <h2>PLANEJA.AI</h2>
+        <p>Plataforma em nuvem para criação e correção de avaliações. Questões com IA, correção de redações e pagamentos Pix / Mercado Pago.</p>
+        <ul>
+          <li>Banco BNCC/ENEM e simulados</li>
+          <li>Arquitetura, frontend, backend e pagamentos</li>
+        </ul>
+        <p class="tags">React · Express · Python · MySQL · OpenAI · KaTeX</p>
+        <a class="cta" href="https://planeja.ai" target="_blank" rel="noopener">Ver demonstração</a>
+      </article>
+    </section>
+
+    <section class="panel" data-station="2">
+      <article class="card">
+        <p class="kicker">02 · Gestão de academias · app publicado</p>
+        <h2>TATAME</h2>
+        <p>Sistema completo para academias de artes marciais: alunos, turmas, mensalidades e evolução — painel web + app nativo.</p>
+        <ul>
+          <li>Planos, assinaturas e WhatsApp</li>
+          <li>Android e iOS</li>
+        </ul>
+        <p class="tags">React · TypeScript · Vite · Flutter · Node.js · MySQL</p>
+        <a class="cta" href="https://www.tatame.website" target="_blank" rel="noopener">Ver demonstração</a>
+      </article>
+    </section>
+
+    <section class="panel panel-right" data-station="3">
+      <article class="card">
+        <p class="kicker">03 · Nutricionistas · SaaS ativo</p>
+        <h2>NutriBase</h2>
+        <p>Consultório de nutrição em um fluxo: agenda, prontuário, planos alimentares e financeiro.</p>
+        <ul>
+          <li>Planos de 7 dias com IA e TACO</li>
+          <li>Anamnese digital, portal do paciente, PIX / Mercado Pago</li>
+        </ul>
+        <p class="tags">React · Vite · NestJS · Prisma · Tailwind · OpenAI</p>
+        <a class="cta" href="https://www.nutribase.fit" target="_blank" rel="noopener">Ver demonstração</a>
+      </article>
+    </section>
+
+    <section class="panel" data-station="4">
+      <article class="card">
+        <p class="kicker">04 · Professores de inglês · em produção</p>
+        <h2>TeachersHub</h2>
+        <p>Do nivelamento CEFR à aula ao vivo, sem planilhas nem Zoom. Aulas geradas por IA e sala com chat/vídeo.</p>
+        <ul>
+          <li>Relatórios pedagógicos</li>
+          <li>Multi-professor e multi-aluno</li>
+        </ul>
+        <p class="tags">React · Vite · NestJS · MySQL · OpenAI · Socket.io</p>
+        <a class="cta" href="https://www.teachershub.website" target="_blank" rel="noopener">Ver demonstração</a>
+      </article>
+    </section>
+
+    <section class="panel panel-right" data-station="5">
+      <article class="card">
+        <p class="kicker">05 · Fisioterapia · em desenvolvimento</p>
+        <h2>Fisio360</h2>
+        <p>Gestão clínica do agendamento à evolução do paciente, com mapa do corpo, pacotes e financeiro.</p>
+        <ul>
+          <li>Agenda e anamnese</li>
+          <li>Preparada para múltiplas clínicas</li>
+        </ul>
+        <p class="tags">React · Vite · NestJS · Prisma · Tailwind · React Query</p>
+        <a class="cta" href="https://www.fisio360.website" target="_blank" rel="noopener">Ver demonstração</a>
+      </article>
+    </section>
+
+    <section class="panel" data-station="6">
+      <article class="card">
+        <p class="kicker">06 · Institucional B2B · em produção</p>
+        <h2>M/A Manutenção &amp; Metrologia</h2>
+        <p>Presença digital para captar orçamentos de manutenção técnica e metrologia analítica.</p>
+        <ul>
+          <li>Landing com conversão e formulário</li>
+          <li>Leads por e-mail</li>
+        </ul>
+        <p class="tags">Next.js · TypeScript · Tailwind · Framer Motion · Nodemailer</p>
+        <a class="cta" href="http://2.25.131.103:8088/" target="_blank" rel="noopener">Ver demonstração</a>
+      </article>
+    </section>
+
+    <section class="panel panel-end" data-station="7">
+      <article class="card card-end">
+        <img class="portrait" src="./assets/claudio.jpg" alt="Cláudio Tassis" />
+        <p class="kicker">Fundador · BarCode Labs</p>
+        <h2>Vamos construir o próximo.</h2>
+        <p>Graduado em Análise e Desenvolvimento de Sistemas. Inglês fluente. Atuo de ponta a ponta — código artesanal, foco em conversão e experiência.</p>
+        <div class="end-links">
+          <a class="cta" href="https://barcodelabs.com.br/" target="_blank" rel="noopener">barcodelabs.com.br</a>
+          <a class="cta cta-ghost" href="mailto:claudiotassis@gmail.com">E-mail</a>
+          <a class="cta cta-ghost" href="https://github.com/claudiotassis">GitHub</a>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <p class="webgl-fail" hidden>Seu navegador não rodou o WebGL. Os produtos continuam nos cards — ou abra no Chrome/Edge.</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script type="module" src="./js/world.js"></script>
+</body>
+</html>
